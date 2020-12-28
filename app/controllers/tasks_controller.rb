@@ -23,7 +23,11 @@ class TasksController < ApplicationController
   end
 
   private
-
+  # Strong Parameters
+  # フォームからリクエストパラメータとして送られてきた情報から以下の役割をする
+  # 想定通りの形であることを確認
+  # 受け取る想定である情報(name,description)だけを抜き取る
+  # 不正なデータの登録や更新を防ぐ
   def task_params
     params.require(:task).permit(:name, :description)
   end
