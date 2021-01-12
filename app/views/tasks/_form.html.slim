@@ -2,6 +2,9 @@
 
 / form_withはモデルオブジェクトを使ってHTMLのform要素を作成するためのメソッド
 / モデルとフォームは、model: @taskという引数を渡すことで対応づけられる
+
+/ パーシャルテンプレートの場合、インスタンス変数の@taskではなくローカル変数taskとして渡すことで再利用性の高いパーシャルにすることができる
+/ パーシャルから直接@taskを参照することも可能
 = form_with model: task, local: true do |f|
   .form-group
     = f.label :name
