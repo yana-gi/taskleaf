@@ -10,6 +10,7 @@ h1 Tasks#index
         / <%= %> → = で表示
         th= Task.human_attribute_name(:name)
         th= Task.human_attribute_name(:created_at)
+        th
     tbody
       / <% %> → - で表示
       / 条件分岐などの end は不要
@@ -19,3 +20,5 @@ h1 Tasks#index
           / 次のようにもかける
           /td= task.name, task_path(task)
           td= task.created_at
+          td
+            = link_to '編集', edit_task_path(task), class: 'btn btn-primary me-3'
